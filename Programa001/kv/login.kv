@@ -1,0 +1,17 @@
+<TelaLogin>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 20
+        spacing: 10
+
+        Label:
+            text: 'Tela de Login'
+            font_size: 32
+
+        TextInput:
+            hint_text: 'Usuário'
+            
+        Button: # botão para trocar de tela
+            text: 'Entrar'
+            on_press: # quando clicar, altera o valor de current(tela atual) para menu
+                root.manager.current = 'menu'
