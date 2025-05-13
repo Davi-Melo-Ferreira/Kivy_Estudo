@@ -3,14 +3,15 @@ from kivy.uix.screenmanager import ScreenManager
 from telas.login import TelaLogin
 from telas.menu import TelaMenu  # outra tela exemplo
 from kivy.lang import Builder
+import os
 
 class GerenciadorTelas(ScreenManager):
     pass
 
 class MeuApp(App):
     def build(self):
-        Builder.load_file(('kv\login.kv')) # lê o arquivo e compila o conteúdo
-        Builder.load_file(('kv\menu.kv')) # para usar os wigdets, regras e etc.
+        Builder.load_file(os.path.join('kv','login.kv')) # lê o arquivo e compila o conteúdo
+        Builder.load_file(os.path.join('kv','menu.kv')) # para usar os wigdets, regras e etc.
 
         screen_manager = GerenciadorTelas()
         screen_manager.add_widget(TelaLogin(name='login'))#name tem q ser igual
